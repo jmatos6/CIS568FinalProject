@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Title on web page and link to style sheet3 -->
     <meta charset="UTF-8">
     <title>Visualizations of Soil Bacteria Observations</title>
     <link rel="stylesheet" href="style.css">
-    <script src="lib/d3.js"></script>
 </head>
 <body>
+    <!-- Row 1. Title and Description -->
     <div class="row">
         <div class="container" style="width: 30%">
             <a class="title" href="https://www.kaggle.com/datasets/willianoliveiragibin/different-vegetation-restoration">
@@ -19,6 +20,7 @@
             <p>The visualization on the left is a scatter plot of the count of types of bacteria in different soil in different quarters. The visualization on the right is bar chart of counts of aggregate groups of bacteria for each soil type and in three different quarters.</p>
         </div>
     </div>
+    <!-- Row 2. Soil type and Quarter buttons -->
     <div class="row">
         <div class="container" style="width: 52.5%">
             <div class="row">
@@ -52,6 +54,7 @@
             </div>
         </div>
     </div>
+    <!-- Row 3. The visualizations -->
     <div class="row">
         <div class="container" style="width: 47.5%">
             <img id="scatterPlot" src="img/scatterplotB1.png" alt="Scatter Plot of Soil Bacteria Observations Data"></img>
@@ -161,7 +164,6 @@ function setBarChart() {
         barChart.src="img/barchart3.png"
     }
 }
-
 </script>
 </body>
 </html>
