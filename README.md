@@ -8,4 +8,4 @@ Download the git repository as a zip and unpack it. Open the folder of the proje
 Explain how to read the visualization (what each axis and encoding meting means), explain the idioms separately.
 
 # The Framework
-![alt text](img/Figma.png "Screenshot of the Framework")
+![Screenshot of the Framework](img/Figma.png "Screenshot of the Framework")
