@@ -10,4 +10,5 @@ Open the folder of the project in VSC (https://code.visualstudio.com/) and run t
 Explain how to read the visualization (what each axis and encoding meting means), explain the idioms separately.
 
 # The Framework
+Made with Figma (https://www.figma.com)
 ![Screenshot of the Framework](img/Figma.png "Screenshot of the Framework")
