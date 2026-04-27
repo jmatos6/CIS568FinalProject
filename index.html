@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizations of Soil Bacteria Observations</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="lib/d3.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="container" style="width: 30%">
+            <a class="title" href="https://www.kaggle.com/datasets/willianoliveiragibin/different-vegetation-restoration">
+                <b class="titleText">Visualizations of Soil Bacteria Observations</b>
+            </a>
+        </div>
+        <div class="container" style="width: 65%">
+            <p>This website provides visualizations for Soil Bacteria Observations database, which provides a study which reports soil bacterial communities and ecosystem functions across reclaimed mine vegetation types: bare soil (CK), grassland (GL), poplar plantation (GPL), and mixed forest (ML). It also provides the analysis of topsoil bacterial diversity, composition, and potential functions via 16S rRNA gene sequencing and evaluation of integrated soil fertility using PCA. The size of the dataset is 14 columns by 40,325 rows.</p>
+            <p style="opacity: 0%;">-</p> <!-- functions as a blank line -->
+            <p>The visualization on the left is a scatter plot of the count of types of bacteria in different soil in different quarters. The visualization on the right is bar chart of counts of aggregate groups of bacteria for each soil type and in three different quarters.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container" style="width: 52.5%">
+            <div class="row">
+                <h2>Soil Types:</h2>
+                <button onclick="bareSoilButton()">
+                    <b>Bare Soil</b>
+                </button>
+                <button onclick="grasslandButton()">
+                    <b>Grassland</b>
+                </button>
+                <button onclick="poplarPlantationButton()">
+                    <b>Poplar Plantation</b>
+                </button>
+                <button onclick="mixedForestButton()">
+                    <b>Mixed Forest</b>
+                </button>
+            </div>
+        </div>
+        <div class="container" style="width: 42.5%">
+            <div class="row">
+                <h2>Quarters:</h2>
+                <button onclick="quarter1Button()">
+                    <b>Quarter 1</b>
+                </button>
+                <button onclick="quarter2Button()">
+                    <b>Quarter 2</b>
+                </button>
+                <button onclick="quarter3Button()">
+                    <b>Quarter 3</b>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container" style="width: 47.5%">
+            <img id="scatterPlot" src="img/scatterplotB1.png" alt="Scatter Plot of Soil Bacteria Observations Data"></img>
+        </div>
+        <div class="container" style="width: 47.5%">
+           <img id="barChart" src="img/barchartB1.png" alt="Bar Chart of Soil Bacteria Observations Data"></img>
+        </div>
+    </div>
+<script>
+
+//Variables for plots from HTML
+const scatterPlot = document.getElementById("scatterPlot")
+const barChart = document.getElementById("barChart")
+
+//The following code displays each plot based on the buttons pressed above
+var currentSoil = 0
+var currentQuarter = 1
+
+//------------------------Soil buttons----------------------
+function bareSoilButton() {
+    currentSoil = 0
+    setScatterPlot()
+}
+
+function grasslandButton() {
+    currentSoil = 1
+    setScatterPlot()
+}
+
+function poplarPlantationButton() {
+    currentSoil = 2
+    setScatterPlot()
+}
+
+function mixedForestButton() {
+    currentSoil = 3
+    setScatterPlot()
+}
+
+//------------------------Quarter buttons----------------------
+function quarter1Button() {
+    currentQuarter = 1
+    setScatterPlot()
+    setBarChart()
+}
+
+function quarter2Button() {
+    currentQuarter = 2
+    setScatterPlot()
+    setBarChart()
+}
+
+function quarter3Button() {
+    currentQuarter = 3
+    setScatterPlot()
+    setBarChart()
+}
+
+//------------------------Image Set Functions----------------------
+function setScatterPlot() {
+    if ((currentSoil == 0) && currentQuarter == 1) {
+        scatterPlot.src="img/scatterplotB1.png"
+    }
+    else if ((currentSoil == 0) && currentQuarter == 2) {
+        scatterPlot.src="img/scatterplotB2.png"
+    }
+    else if ((currentSoil == 0) && currentQuarter == 3) {
+        scatterPlot.src="img/scatterplotB3.png"
+    }
+    else if ((currentSoil == 1) && currentQuarter == 1) {
+        scatterPlot.src="img/scatterplotG1.png"
+    }
+    else if ((currentSoil == 1) && currentQuarter == 2) {
+        scatterPlot.src="img/scatterplotG2.png"
+    }
+    else if ((currentSoil == 1) && currentQuarter == 3) {
+        scatterPlot.src="img/scatterplotG3.png"
+    }
+    else if ((currentSoil == 2) && currentQuarter == 1) {
+        scatterPlot.src="img/scatterplotP1.png"
+    }
+    else if ((currentSoil == 2) && currentQuarter == 2) {
+        scatterPlot.src="img/scatterplotP2.png"
+    }
+    else if ((currentSoil == 2) && currentQuarter == 3) {
+        scatterPlot.src="img/scatterplotP3.png"
+    }
+    else if ((currentSoil == 3) && currentQuarter == 1) {
+        scatterPlot.src="img/scatterplotM1.png"
+    }
+    else if ((currentSoil == 3) && currentQuarter == 2) {
+        scatterPlot.src="img/scatterplotM2.png"
+    }
+    else if ((currentSoil == 3) && currentQuarter == 3) {
+        scatterPlot.src="img/scatterplotM3.png"
+    }
+}
+
+function setBarChart() {
+    if (currentQuarter == 1) {
+        barChart.src="img/barchart1.png"
+    }
+    else if (currentQuarter == 2) {
+        barChart.src="img/barchart2.png"
+    }
+    else if (currentQuarter == 3) {
+        barChart.src="img/barchart3.png"
+    }
+}
+
+</script>
+</body>
+</html>
